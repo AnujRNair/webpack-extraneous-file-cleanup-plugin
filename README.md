@@ -9,7 +9,7 @@ https://github.com/AnujRNair/webpack-extraneous-file-cleanup-plugin
 In your `webpack.config.js` file:
 
 ```js
-import ExtraneousFileCleanupPlugin from 'webpack-extraneous-file-cleanup-plugin';
+const ExtraneousFileCleanupPlugin = require('webpack-extraneous-file-cleanup-plugin');
 
 module.exports = {
   ...
@@ -24,11 +24,11 @@ module.exports = {
 The ExtraneousFileCleanupPlugin accepts an object of options with the following signature:
 
 ```js
-{
+new ExtraneousFileCleanupPlugin({
   extensions: ['.extensions', '.to', 'whitelist'],
   minBytes: 1024,
   manifestJsonName: 'manifest.json'
-}
+})
 ```
 
 * `extensions` - a list of extensions we're allowed to analyze for their file size. Useful for not removing small `.js.map` files, or small `.css` files.
