@@ -2,6 +2,14 @@
 
 A webpack plugin to remove unwanted files which may have been created and output due to multiple entry points
 
+## Problem
+
+When using ExtractTextPlugin, it's not possible to generate a css file for each chunk webpack outputs, if you're using [code splitting]([https://webpack.js.org/guides/code-splitting/]).
+
+The only possible way to do this is to have an entry point for each top level css / less / scss file, however this will create small js files with empty webpack functions in them, which are undesirable.
+ 
+This plugin removes files which are under a certain byte size, after everything has been compiled and output. It can also remove these files from your `manifest.json` file if you are using the [webpack manifest plugin](https://github.com/danethurber/webpack-manifest-plugin) or something similar to it. 
+
 ## Usage
 
 Install using `npm` or `yarn`
@@ -44,5 +52,5 @@ new ExtraneousFileCleanupPlugin({
 ```
 
 * `extensions` - a list of extensions we're allowed to analyze for their file size. Useful for not removing small `.js.map` files, or small `.css` files. Defaults to analyzing all file types.
-* `minBytes` - the minimum byte size a file has to meet to not be deleted. Defaaults to 1024 bytes.
+* `minBytes` - the minimum byte size a file has to meet to not be deleted. Defaults to 1024 bytes.
 * `manifestJsonName` - if you're outputting a `manifest.json` file, this plugin will also remove deleted files from the manifest. Defaults to `manifest.json`

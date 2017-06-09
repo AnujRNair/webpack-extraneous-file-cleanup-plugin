@@ -4,7 +4,7 @@
   "description": "A webpack plugin to remove unwanted files which may have been created and output due to multiple entry points",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/standard && ./node_modules/.bin/jasmine"
+    "test": "./node_modules/.bin/standard"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/AnujRNair/webpack-extraneous-file-cleanup-plugin/issues"
   },
-  "homepage": "https://github.com/AnujRNair/webpack-extraneous-file-cleanup-plugin#readme"
+  "homepage": "https://github.com/AnujRNair/webpack-extraneous-file-cleanup-plugin#readme",
+  "devDependencies": {
+    "standard": "^10.0.2"
+  }
 }
