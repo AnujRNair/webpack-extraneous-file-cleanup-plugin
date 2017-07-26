@@ -4,7 +4,7 @@ A webpack plugin to remove unwanted files which may have been created and output
 
 ## Problem
 
-When using ExtractTextPlugin, it's not possible to generate a css file for each chunk webpack outputs, if you're using [code splitting]([https://webpack.js.org/guides/code-splitting/]).
+When using ExtractTextPlugin, it's not possible to generate a css file for each chunk webpack outputs, if you're using [code splitting](https://webpack.js.org/guides/code-splitting/).
 
 The only possible way to do this is to have an entry point for each top level css / less / scss file, however this will create small js files with empty webpack functions in them, which are undesirable.
  
