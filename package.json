@@ -1,6 +1,6 @@
 {
   "name": "webpack-extraneous-file-cleanup-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack plugin to remove unwanted files which may have been created and output due to multiple entry points",
   "main": "index.js",
   "scripts": {
