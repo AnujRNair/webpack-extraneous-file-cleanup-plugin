@@ -70,5 +70,5 @@ new ExtraneousFileCleanupPlugin({
 * `paths` - an array of strings to specify which if any paths you want to limit the searching to. If this is defined, files will only be removed from those paths.
 * `glob` - an array of glob patterns to delete (see [micromatch](https://github.com/micromatch/micromatch)). If glob array is not empty, `minBytes` will be ignored.
 * `globOptions` - optional [options](https://github.com/micromatch/micromatch#options) for `glob`
-* `ignoreGlob` - an array of glob patterns to exclude from deletion
-* `ignoreGlobOptions` - optional options for `ignoreGlob`
+* `ignore` - an array of glob patterns to exclude from deletion (can be used together with `minBytes`)
+* `ignoreOptions` - optional options for `ignore`
