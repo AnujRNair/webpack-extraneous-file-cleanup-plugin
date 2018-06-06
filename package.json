@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/AnujRNair/webpack-extraneous-file-cleanup-plugin#readme",
   "devDependencies": {
+    "micromatch": "^3.1.10",
     "standard": "^10.0.2"
   }
 }
