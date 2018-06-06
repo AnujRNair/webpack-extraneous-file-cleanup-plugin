@@ -48,11 +48,27 @@ new ExtraneousFileCleanupPlugin({
   extensions: ['.extensions', '.to', '.whitelist'],
   minBytes: 1024,
   manifestJsonName: 'manifest.json',
-  paths: ['/dist/removeFromThisPath']
+  paths: ['/dist/removeFromThisPath'],
+  glob: [
+    // glob patterns to delete
+  ],
+  globOptions: {
+    // micromatch options for glob
+  },
+  ignoreGlob: {
+    // glob patterns to ignore
+  },
+  ignoreGlobOptions: {
+    // micromatch options for ignoreGlob
+  }
 })
 ```
 
 * `extensions` - a list of extensions we're allowed to analyze for their file size. Useful for not removing small `.js.map` files, or small `.css` files. Defaults to analyzing all file types.
 * `minBytes` - the minimum byte size a file has to meet to not be deleted. Defaults to 1024 bytes.
 * `manifestJsonName` - if you're outputting a `manifest.json` file, this plugin will also remove deleted files from the manifest. Defaults to `manifest.json`
-* paths - an array of strings to specify which if any paths you want to limit the searching to. If this is defined, files will only be removed from those paths.
+* `paths` - an array of strings to specify which if any paths you want to limit the searching to. If this is defined, files will only be removed from those paths.
+* `glob` - an array of glob patterns to delete (see [micromatch](https://github.com/micromatch/micromatch)). If glob array is not empty, `minBytes` will be ignored.
+* `globOptions` - optional [options](https://github.com/micromatch/micromatch#options) for `glob`
+* `ignore` - an array of glob patterns to exclude from deletion (can be used together with `minBytes`)
+* `ignoreOptions` - optional options for `ignore`
